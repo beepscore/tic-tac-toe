@@ -51,6 +51,7 @@ class Board extends React.Component {
   }
 }
 
+// Game manages game state and history
 class Game extends React.Component {
   constructor() {
     super();
