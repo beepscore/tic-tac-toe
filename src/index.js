@@ -2,18 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+// Square is a "functional component".
 // Square is a "controlled component", controlled by Board
 // Square doesn't keep its own state.
 // It receives its value from its parent Board and informs its parent when it's clicked.
-class Square extends React.Component {
-  render() {
-    // when button is clicked, call props.onClick()
-    return (
-      <button className="square" onClick={() => this.props.onClick()}>
-        {this.props.value}
-      </button>
-    );
-  }
+function Square(props) {
+  // when button is clicked, call props.onClick()
+  // functional component can omit explicit render method and just return what should be rendered.
+  return (
+    <button className="square" onClick={props.onClick}>
+      {props.value}
+    </button>
+  );
 }
 
 class Board extends React.Component {
