@@ -29,6 +29,10 @@ class Board extends React.Component {
     // use slice to avoid mutating state.squares by copying it
     // then React can easily tell the data has changed, and so re-render it.
     const squares = this.state.squares.slice();
+    if (calculateWinner(squares) || squares[i]) {
+      // game is over, or this square has already been used
+      return
+    }
     squares[i] = this.state.xIsNext ? 'X' : 'O';
     this.setState({
       squares: squares,
