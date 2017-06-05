@@ -26,6 +26,7 @@ class Board extends React.Component {
 
   handleClick(i) {
     // use slice to avoid mutating state.squares by copying it
+    // then React can easily tell the data has changed, and so re-render it.
     const squares = this.state.squares.slice();
     squares[i] = 'X';
     this.setState({squares: squares});
