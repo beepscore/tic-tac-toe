@@ -13,7 +13,9 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_Jav
 # Results
 
 ## npm start
-In terminal run npm start to start app.
+To start app in terminal run
+
+    npm start
 
 terminal output:
 Compiled successfully!
@@ -22,6 +24,8 @@ You can now view tic-tac-toe in the browser.
   Local:            http://localhost:3000/
   On Your Network:  http://10.0.0.4:3000/
 
+To stop app in terminal run ctrl-c
+    
 # Appendix- create-react-app
 Used this to generate a new project.  
 
