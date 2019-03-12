@@ -46,4 +46,4 @@ chrome-user-data
 .idea
 *.iml
 
-.vscode
+# .vscode
