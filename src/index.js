@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 // Square is a "functional component".
-// Square is a "controlled component", controlled by Board
+// A functional component can omit explicit render method and just return what should be rendered.
 // Square doesn't keep its own state.
-// It receives its value from its parent Board and informs its parent when it's clicked.
+// Square is a "controlled component", controlled by parent Board.
 function Square(props) {
-  // when button is clicked, call props.onClick()
-  // functional component can omit explicit render method and just return what should be rendered.
+  // If user clicks Square button, React calls Square props.onClick()
+  // Since the Board passed closure onClick={() => this.handleClick(i)} to Square,
+  // the Square calls the Game's handleClick(i)
   return (
     <button className="square" onClick={props.onClick}>
       {props.value}
@@ -21,6 +22,7 @@ class Board extends React.Component {
     // use parentheses to prevent javascript from automatically inserting ; after return
     return (
       <Square
+       // Board passes two props to Square- value and onClick
        value={this.props.squares[i]}
        onClick={() => this.props.onClick(i)}
       />
@@ -51,7 +53,14 @@ class Board extends React.Component {
   }
 }
 
-// Game manages game state and history
+/// Game manages game state, history and squares Array
+/// Game render returns a Board.
+/// "We may think that Game (or Board) should just ask each Square for the Square’s state.
+/// Although this approach is possible in React, we discourage it because
+/// the code becomes difficult to understand, susceptible to bugs, and hard to refactor.
+/// Instead, the best approach is to store the game’s state in the parent component instead of in each Square.
+/// The parent component can tell each Square what to display by passing a prop...
+/// Lifting state into a parent component is common when React components are refactored"
 class Game extends React.Component {
   constructor() {
     super();
@@ -91,6 +100,7 @@ class Game extends React.Component {
     });
   }
 
+  /// returns a Board
   render() {
     const history = this.state.history
     // current game
@@ -120,6 +130,7 @@ class Game extends React.Component {
         <div className="game-board">
           <Board
             squares={current.squares}
+            // set each Square.onClick to call Game's handleClick
             onClick={(i) => this.handleClick(i)}
            />
         </div>
@@ -139,6 +150,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
+/// returns winning player as a single character string "O" or "X", else null
 function calculateWinner(squares) {
   const lines = [
     // rows
