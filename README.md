@@ -33,6 +33,8 @@ To start VS Code
     cd <project directory>
     code .
 
+See also Appendix Visual Studio Code Attaching to Node.js
+
 ### set breakpoints
 In javascript files set breakpoints.
 
@@ -45,9 +47,9 @@ Tap green triangle, configuration "Launch Chrome against localhost"
 ### debug
 In VS Code on left column tap debug icon.
 Use app. Execution pauses at breakpoint.
-    
+
 # Appendix- create-react-app
-Used this to generate a new project.  
+Used this to generate a new project.
 
 In terminal ran
     create-react-app tic-tac-toe
@@ -72,3 +74,16 @@ We suggest that you begin by typing:
 
   cd tic-tac-toe
   yarn start
+
+# Appendix Visual Studio Code Attaching to Node.js
+https://code.visualstudio.com/docs/nodejs/nodejs-debugging
+
+If you want to attach the VS Code debugger to a Node.js program, launch Node.js in VS Code's integrated terminal as follows:
+
+    node --inspect program.js
+
+or if the program should not start running but must wait for the debugger to attach:
+
+    node --inspect-brk program.js
+
+Now you have three options for attaching the debugger to your program:...
