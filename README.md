@@ -2,8 +2,9 @@
 Do React javascript tutorial
 
 # References
+
 ## tic-tac-toe game
-https://facebook.github.io/react/tutorial/tutorial.html
+https://reactjs.org/tutorial/tutorial.html
 
 ## A re-introduction to JavaScript
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript
