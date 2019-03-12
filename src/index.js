@@ -112,6 +112,8 @@ class Game extends React.Component {
         'Move #' + move :
         'Game start';
        return (
+         // within a dynamic list, assign each element a unique key
+         // if user clicks on list element, reset board to that move
          <li key={move}>
            <a href="#" onClick={() => this.jumpTo(move)}>{desc}</a>
          </li>
