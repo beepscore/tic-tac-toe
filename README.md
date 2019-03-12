@@ -26,6 +26,25 @@ You can now view tic-tac-toe in the browser.
   On Your Network:  http://10.0.0.4:3000/
 
 To stop app in terminal run ctrl-c
+
+## Visual Studio Code to debug and set breakpoints
+To start VS Code
+
+    cd <project directory>
+    code .
+
+### set breakpoints
+In javascript files set breakpoints.
+
+### npm start
+Can do this within VS Code terminal or from iTerm
+
+### run vs code configuration
+Tap green triangle, configuration "Launch Chrome against localhost"
+
+### debug
+In VS Code on left column tap debug icon.
+Use app. Execution pauses at breakpoint.
     
 # Appendix- create-react-app
 Used this to generate a new project.  
